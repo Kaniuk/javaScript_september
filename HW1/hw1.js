@@ -100,14 +100,14 @@ alert(`Hello ${name} ${midName}! You are ${age} years old.`);*/
 // - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
 //     let a = 100; let b = '100'; let c = true;
 
-let a = 100;
+/*let a = 100;
 console.log(typeof a);
 
 let b = '100'
 console.log(typeof b);
 
 let c = true;
-console.log(typeof c);
+console.log(typeof c);*/
 
 
 // - Визначити відповідний оператор в виразах що б вийшов відповідний результат.
@@ -147,9 +147,21 @@ document.write(str - a + "<br/>"); - 15 - Numerical transformation occurs in mat
 document.write(str * "2" + "<br/>"); - 40
 document.write(str / 2 + "<br/>"); - 10
 */
+// Ваше завдання, зробити так, щоб файл відкривався без помилок .
 
+let a = 100;
+let b = 500;
+let c = "hello";
+let d = "okten";
+const x = 'constant value';
+{
+    console.log(a);
+}
 
+let y = 'new value';
+let result = 100 + y;
 
+console.log(result);
 
 
 
