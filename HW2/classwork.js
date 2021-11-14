@@ -51,9 +51,9 @@ if (typeof x === 'number') {
     console.log(1)
 }else if (typeof x ==='string') {
     console.log(2)
-}else if (typeof x === 'boolean') {
+}else if (typeof x === 'boolean' || typeof x === 'array' || typeof x === 'object')  {
     console.log(3)
-}
+}else console.log(4)
 */
 
 // - Задача-гра "чи ми йдемо сьогодні в OKTEN на навчання?".
