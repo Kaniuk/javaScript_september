@@ -37,14 +37,6 @@ for (const element of arr) {
     console.log(element);
 }*/
 
-/*
-let result = '';
-for (let i = 0; i < arr.length; i++) {
-    const element = arr[i];
-    result += `
-    arr[${i}] = ${element}`
-}
-console.log(result);*/
 
 
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
