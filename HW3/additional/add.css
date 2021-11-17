@@ -1,0 +1,15 @@
+.user {
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.phone {
+padding-bottom: 25px;
+}
