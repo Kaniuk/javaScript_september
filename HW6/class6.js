@@ -1,3 +1,4 @@
+/*
 // - Дано список імен.
 //     let n1 = 'Harry..Potter'
 // let n2 = 'Ron---Whisley'
@@ -32,6 +33,20 @@ console.log(normalName);
 //     let nums = [11,21,3];
 // sortNums('ascending') // [3,11,21]
 // sortNums('descending') // [21,11,3]
+
+function sortNums(arr, direction) {
+     let newArr = [];
+    if (direction === 'asc') {
+        arr.sort((a,b) => (a-b))
+        newArr.push(arr);
+
+    } else if (direction === 'desc') {
+        arr.sort((b,a) => (b-a));
+        newArr.push(arr)
+    }
+    console.log(newArr)
+}
+sortNums([11,21,3],'asc')
 
 //     - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
 function generateArray(limit) {
@@ -91,5 +106,159 @@ let cutString = (str, n) => {
 }
 const cutStr = cutString('наслаждение', 3);
 console.log(cutStr);
+*/
+
+// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+// Протестувати на значеннях
+// someemail@gmail.com
+// someeMAIL@gmail.com
+// someeMAIL@i.ua
+// some.email@gmail.com
+
+let emailValidation = (email) => {
+    let checkExistAndPositionOfSnail = (email) => {
+        if (email.indexOf('@') < 1) {
+            return false;
+        }
+        return true;
+    }
+    let checkExistAndPositionOfPoint = (email) => {
+        const indexOfSnail = email.indexOf('@')
+
+        if (indexOfSnail === -1) {
+            return false
+        }
+        const lastIndexOfPoint = email.lastIndexOf('.')
+        return lastIndexOfPoint - indexOfSnail >= 2;
+    }
+
+    return (
+        checkExistAndPositionOfSnail(email) &&
+        checkExistAndPositionOfPoint(email)
+    )
+
+
+}
+let validEmail = emailValidation('someemail@gmail.com');
+console.log('validEmail', validEmail);
+
+
+// - є масив
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced'
+        ]
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: [
+            'html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced'
+        ]
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: [
+            'html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java'
+        ]
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+
+
+// відсортувати його в спадаючому порядку за кількістю елементів в полі modules
+
+
+let sortArray = coursesArray.sort((a, b) => a.modules.length - b.modules.length);
+console.log(sortArray);
+
+
+// - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
+//     let symb = "о", str = "Астрономия это наука о небесных объектах";
+// document.writeln(count(str, symb)) // 5
+
+function count(str, search) {
+    let countText = 0;
+    for (let i = 0; i < str.length; i++) {
+        const element = str[i];
+
+        if (element === search) {
+            countText++
+        }
+
+    }
+    return countText
+}
+
+document.writeln(count('Астрономия это наука о небесных объектах', 'о'));
+
+
+// - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
+//     let str = "Сила тяжести приложена к центру масс тела";
+// document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
+
+let cutString = (str, n) => {
+    return str.split(' ')
+        .slice(0, n)
+        .join(' ')
+
+}
+
+let str = "Сила тяжести приложена к центру масс тела";
+document.writeln(cutString(str, 2));
 
 
