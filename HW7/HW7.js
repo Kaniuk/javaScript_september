@@ -52,7 +52,6 @@ class Client {
 
 }
 
-
 let clients = [
     new Client(1, 'Oleg', 'Petrov', 'petrov@gmai.com', '+380958746685', 45),
     new Client(2, 'Oleg', 'Petrov', 'petrov@gmai.com', '+380958746685', 4),
