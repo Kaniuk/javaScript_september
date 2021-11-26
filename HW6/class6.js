@@ -115,6 +115,7 @@ console.log(cutStr);
 // someeMAIL@i.ua
 // some.email@gmail.com
 
+/*
 let emailValidation = (email) => {
     let checkExistAndPositionOfSnail = (email) => {
         if (email.indexOf('@') < 1) {
@@ -126,7 +127,7 @@ let emailValidation = (email) => {
         const indexOfSnail = email.indexOf('@')
 
         if (indexOfSnail === -1) {
-            return false
+            return false;
         }
         const lastIndexOfPoint = email.lastIndexOf('.')
         return lastIndexOfPoint - indexOfSnail >= 2;
@@ -237,11 +238,11 @@ function count(str, search) {
         const element = str[i];
 
         if (element === search) {
-            countText++
+            countText++;
         }
 
     }
-    return countText
+    return countText;
 }
 
 document.writeln(count('Астрономия это наука о небесных объектах', 'о'));
@@ -254,11 +255,52 @@ document.writeln(count('Астрономия это наука о небесны
 let cutString = (str, n) => {
     return str.split(' ')
         .slice(0, n)
-        .join(' ')
+        .join(' ');
 
 }
 
 let str = "Сила тяжести приложена к центру масс тела";
 document.writeln(cutString(str, 2));
+*/
 
+/*
+Сумма цифр числа
+Дано натуральное число N. Вычислите сумму его цифр.
+При решении этой задачи нельзя использовать строки,
+массивы ну и циклы
+Вам поможет Рекурсія)
 
+пример:
+1234 -> 10
+879 -> 24
+11 -> 2
+ */
+
+/*
+
+function getSumOfNumberDigits(number) {
+    const strNumber = number.toString();
+
+    if (strNumber.length === 1) {
+        return  +strNumber
+    }
+
+    return +strNumber[0] + getSumOfNumberDigits(+strNumber.slice(1));
+}
+*/
+
+function getSumOfNumberDigits(number) {
+
+    
+    if (number < 10) {
+        return number;
+    }
+    const numberOfDigits = number.toString().length
+debugger
+    const div = Math.pow(10, numberOfDigits - 1)
+    return Math.floor(number / div) + getSumOfNumberDigits(number - div);
+}
+
+console.log(1234, getSumOfNumberDigits(1234));
+// console.log(879, getSumOfNumberDigits(879));
+// console.log(11, getSumOfNumberDigits(11));
