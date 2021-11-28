@@ -8,13 +8,12 @@
     recursion2(n - 1);
 }
 
-recursion2(10);*/
+recursion2(25);*/
 
 
 // - Даны два целых числа A и В . Выведите все числа от A до B включительно, в порядке возрастания, если A < B, или в порядке убывания в противном случае.
-/*
 
-function logAllNumbers(a, b) {
+/*function logAllNumbers(a, b) {
     console.log(a);
     if (a === b) {
         return
@@ -26,8 +25,7 @@ function logAllNumbers(a, b) {
         logAllNumbers(a - 1, b);
     }
 }
-logAllNumbers(4,6);
-*/
+logAllNumbers(4,6);*/
 
 // -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
 //   EXAMPLE:
@@ -76,4 +74,30 @@ console.log(arr);*/
 
 
 console.log(transferZeroInEnd([1, 0, 6, 0, 3,5,0,2,4]));*/
+
+/*    describe() {
+        console.log(`------------<${this.title}>------------`);
+        console.log(`Description: ${this.description}`);
+        console.log(`---------ATTRIBUTES----------`);
+
+        for (const attr of this.attributes) {
+            console.log(`"${attr.titleOfAttr}" - ${attr.actionOfAttr}`)
+        }
+    }
+
+}
+
+class LinkDescription extends TegDescription {
+    constructor() {
+        super('a', 'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок.');
+        this.attributes = [
+            {titleOfAttr: 'href', actionOfAttr: 'Задает адрес документа, на который следует перейти'},
+            {titleOfAttr: 'accesskey', actionOfAttr: 'Активация ссылки с помощью комбинации клавиш'},
+            {titleOfAttr: 'download', actionOfAttr: 'Предлагает скачать указанный по ссылке файл.'},
+        ];
+    }
+}
+
+const link = new LinkDescription();
+link.describe();*/
 

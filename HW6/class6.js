@@ -290,17 +290,15 @@ function getSumOfNumberDigits(number) {
 */
 
 function getSumOfNumberDigits(number) {
-
-    
     if (number < 10) {
         return number;
     }
-    const numberOfDigits = number.toString().length
-debugger
-    const div = Math.pow(10, numberOfDigits - 1)
-    return Math.floor(number / div) + getSumOfNumberDigits(number - div);
+    const numberWithoutLastDigit = Math.floor(number / 10);
+    const lastDigit = number - numberWithoutLastDigit * 10;
+
+    return lastDigit + getSumOfNumberDigits(numberWithoutLastDigit);
 }
 
 console.log(1234, getSumOfNumberDigits(1234));
-// console.log(879, getSumOfNumberDigits(879));
-// console.log(11, getSumOfNumberDigits(11));
+console.log(879, getSumOfNumberDigits(879));
+console.log(11, getSumOfNumberDigits(11));
