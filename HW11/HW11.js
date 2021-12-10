@@ -57,20 +57,29 @@ volumeInput.setAttribute('placeholder', 'Type volume');
 volumeInput.style.marginRight = '20px';
 
 let carBtn = document.createElement('button');
-carBtn.innerText = 'Enter'
+carBtn.innerText = 'Enter';
 
-function saveCarInfo(carModel,carType,carVolume) {
+function saveCarInfo(carModel, carType, carVolume) {
     let car = {
-        model : carModel,
+        model: carModel,
         type: carType,
-        volume : carVolume
+        volume: carVolume
+    };
+
+    let cars = JSON.parse(localStorage.getItem('cars'));
+    if (!cars) {
+        cars = [];
+        cars.push(car);
+    } else {
+        cars.push(car);
     }
-    localStorage.setItem('key', JSON.stringify(car));
+    localStorage.setItem('cars', JSON.stringify(cars));
 
 }
+
 carBtn.onclick = function () {
     saveCarInfo(modelInput.value, typeInput.value, volumeInput.value);
-}
+};
 
-carForm.append(modelInput, typeInput, volumeInput,carBtn);
+carForm.append(modelInput, typeInput, volumeInput, carBtn);
 document.body.appendChild(carForm);
