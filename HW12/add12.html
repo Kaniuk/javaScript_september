@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .wrap {
+    display: flex;
+    }
+
+    .posts,.users, .comments {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    row-gap: 15px;
+    }
+    .user {
+        border: 1px solid black;
+        width:40%;
+        padding: 10px;
+    }
+
+    .post {
+    border: 1px solid black;
+    width: 40%;
+    padding: 10px;
+    }
+
+    .comment {
+    border: 1px solid black;
+    width: 80%;
+    padding: 10px;
+    }
+
+    .post-button {
+    background-color: cadetblue;
+    border-radius: 5px;
+    padding: 8px;
+    }
+
+    .post-button:focus {
+    background-color: aquamarine;
+    }
+    </style>
+</head>
+<body>
+<div class="wrap">
+<div class="users"></div>
+<div class="posts"></div>
+<div class="comments"></div>
+</div>
+
+<script src="add12.js"></script>
+</body>
+</html>
