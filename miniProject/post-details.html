@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .post {
+            border: 1px solid blue;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .post-button {
+            /*width: 90%;*/
+            padding: 10px;
+            background: #4676D7;
+            color: #fff;
+            border-radius: 10px;
+            font-size: 19px;
+            /*font-weight: bold;*/
+            margin-top: 15px;
+            cursor: pointer;
+
+        }
+
+        .post-button:hover {
+            background: #1d49aa;
+            transition-duration: .5s;
+            box-shadow: 0 0 0 4px #cbd6ee;
+        }
+
+        .comments {
+            margin-top: 10px;
+
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            justify-content: space-evenly;
+        }
+
+        .comment {
+            height: 100px;
+            width: 22%;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-align: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="posts"></div>
+
+<div class="comments"></div>
+
+<script src="post-details.js"></script>
+</body>
+</html>

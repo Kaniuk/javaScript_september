@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .users {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            row-gap: 20px;
+        }
+
+        .user {
+            width: 35%;
+            border: 1px solid cadetblue;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            background: ghostwhite;
+        }
+
+        .details-button {
+            appearance: none;
+            border: 0;
+            border-radius: 5px;
+            background: #4676D7;
+            color: #fff;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+
+        .details-button:hover {
+            background: #1d49aa;
+        }
+
+        .details-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px #cbd6ee;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="users-wrap">
+    <div class="users"></div>
+</div>
+<script src="project.js"></script>
+</body>
+</html>
+
