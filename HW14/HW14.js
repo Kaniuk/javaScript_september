@@ -85,7 +85,6 @@ function familyTime(timeout) {
 
 }
 
-/*
 wakeUp(500)
     .then(() => {
         return takeShower(1000);
@@ -111,10 +110,11 @@ wakeUp(500)
     .then(() => {
         return familyTime(3000);
     })
-    .then(() => {
+    .finally(() => {
         console.log('It was great day!');
-    });*/
+    });
 
+/*
 async function someOrdinaryDay() {
     const dayBegin = await (wakeUp(1000));
     await (takeShower(100));
@@ -129,4 +129,4 @@ async function someOrdinaryDay() {
 
 }
 
-someOrdinaryDay();
+someOrdinaryDay();*/
