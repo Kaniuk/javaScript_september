@@ -1,4 +1,4 @@
-function wakeUp(timeout) {
+/*function wakeUp(timeout) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log('Good morning!');
@@ -83,8 +83,9 @@ function familyTime(timeout) {
         }, timeout);
     });
 
-}
+}*/
 
+/*
 wakeUp(500)
     .then(() => {
         return takeShower(1000);
@@ -112,21 +113,109 @@ wakeUp(500)
     })
     .finally(() => {
         console.log('It was great day!');
-    });
+    });*/
 
-/*
-async function someOrdinaryDay() {
-    const dayBegin = await (wakeUp(1000));
-    await (takeShower(100));
-    await (haveBreakfast(300));
-    await (takeChildToTheKindergarten(300));
-    await (goWork(100));
-    await (haveLunch(250));
-    await (goHome(500));
-    await (pickUpChild(500));
-    await (familyTime(5000));
-    console.log('It was great day!');
-
+/*async function someOrdinaryDay() {
+    try {
+        const dayBegin = await (wakeUp(1000));
+        await (takeShower(100));
+        await (haveBreakfast(300));
+        await (takeChildToTheKindergarten(300));
+        await (goWork(100));
+        await (haveLunch(250));
+        await (goHome(500));
+        await (pickUpChild(500));
+        await (familyTime(5000));
+        console.log('It was great day!');
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 someOrdinaryDay();*/
+
+function wakeUp(timeout, cb) {
+    setTimeout(() => {
+        console.log('Good morning!');
+        cb();
+    }, timeout);
+}
+
+function takeShower(timeout, cb) {
+    setTimeout(() => {
+        console.log('Prepare for the day!');
+        cb();
+    }, timeout);
+}
+
+function haveBreakfast(timeout, cb) {
+    setTimeout(() => {
+        console.log('Delicious!');
+        cb();
+    }, timeout);
+}
+
+function takeChildToTheKindergarten(timeout, cb) {
+    setTimeout(() => {
+        console.log('Hurry up my sweet!');
+        cb();
+    }, timeout);
+
+}
+
+function goWork(timeout, cb) {
+    setTimeout(() => {
+        console.log('Finally!');
+        cb();
+    }, timeout);
+
+}
+
+function haveLunch(timeout, cb) {
+    setTimeout(() => {
+        console.log('Yammy');
+        cb();
+    }, timeout);
+
+}
+
+function goHome(timeout, cb) {
+    setTimeout(() => {
+        console.log('Good job!');
+        cb();
+    }, timeout);
+
+}
+
+function pickUpChild(timeout, cb) {
+    setTimeout(() => {
+        console.log('Hello my sweet!!!');
+        cb();
+    }, timeout);
+
+}
+
+function familyTime(timeout) {
+    setTimeout(() => {
+        console.log('Enjoy!!!');
+    }, timeout);
+
+}
+
+wakeUp(100, () => {
+    takeShower(220, () => {
+        haveBreakfast(400, () => {
+            takeChildToTheKindergarten(200, () => {
+                goWork(100, () => {
+                    haveLunch(200, () => {
+                        goHome(300, () => {
+                            pickUpChild(100, () => {
+                                familyTime(700);
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    });
+});
